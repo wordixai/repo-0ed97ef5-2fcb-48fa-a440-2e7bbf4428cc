@@ -2,26 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* HR Office Design System - Professional and modern */
 
 @layer base {
   :root {
-   
+    /* Primary Colors - Professional Blue */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary Colors - Neutral Gray */
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 210 9% 31%;
+    
+    /* Background Colors */
+    --background: 0 0% 100%;
+    --foreground: 210 9% 12%;
+    
+    /* Muted Colors */
+    --muted: 210 40% 98%;
+    --muted-foreground: 210 9% 45%;
+    
+    /* Accent Colors - Success Green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Destructive Colors - Warning Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border and Input */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 50%;
+    
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 210 9% 12%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 9% 12%;
+    
+    /* Sidebar */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 210 9% 31%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 95%;
+    --sidebar-accent-foreground: 210 9% 31%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 210 100% 50%;
+    
+    --radius: 0.75rem;
   }
 
   .dark {
-
+    --primary: 210 100% 60%;
+    --primary-foreground: 210 9% 12%;
+    
+    --secondary: 210 9% 12%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --background: 210 9% 6%;
+    --foreground: 210 40% 98%;
+    
+    --muted: 210 9% 12%;
+    --muted-foreground: 210 40% 70%;
+    
+    --accent: 142 76% 40%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 210 9% 18%;
+    --input: 210 9% 18%;
+    --ring: 210 100% 60%;
+    
+    --card: 210 9% 8%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 210 9% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    --sidebar-background: 210 9% 8%;
+    --sidebar-foreground: 210 40% 85%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 210 9% 12%;
+    --sidebar-accent: 210 9% 12%;
+    --sidebar-accent-foreground: 210 40% 85%;
+    --sidebar-border: 210 9% 18%;
+    --sidebar-ring: 210 100% 60%;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Custom animations for HR app */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Professional gradients */
+.bg-hr-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(210 100% 60%) 100%);
+}
+
+.bg-card-gradient {
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(210 40% 99%) 100%);
+}
+
+/* Status indicators */
+.status-active {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-inactive {
+  @apply bg-gray-100 text-gray-800 border-gray-200;
+}
+
+.status-pending {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.status-approved {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-rejected {
+  @apply bg-red-100 text-red-800 border-red-200;
 }
